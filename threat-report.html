@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>SOC Monthly report</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+        />
+        <script
+            defer
+            src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+        ></script>
+    </head>
+    <body>
+        <!-- Hero Section -->
+        <section class="hero is-primary is-small">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title is-1">{{report_date}} Threat Report</h1>
+                    <h2 class="subtitle is-3">Security Operation Center</h2>
+                    <div class="tags">
+                        <span class="tag is-warning">TLP:AMBER+STRICT</span>
+                        <span class="tag is-warning">Confidential</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <!-- Threat Level Section -->
+                <h1 class="title">World Threat Landscape</h1>
+                <div class="columns mt-4">
+                    <div class="column is-one-fifth" style="display: flex">
+                        <div class="card">
+                            <div class="card-content has-text-centered">
+                                <h3 class="title is-4">Cyber Threat Level</h3>
+                                <span class="icon is-large">
+                                    <i class="fas fa-shield-alt fa-2x"></i>
+                                </span>
+                                <p class="is-size-5 has-text-weight-bold">
+                                    {{threat_level}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column" style="display: flex">
+                        <div class="card" style="width: -webkit-fill-available">
+                            <div class="card-content">
+                                <h3 class="title is-4">General situation</h3>
+                                <p>{{generalSituation}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hunting Section -->
+                <div class="content mt-6">
+                    <h1 class="title">Threat Hunting</h1>
+                    <p>{{hunting_text}}</p>
+                </div>
+
+                <!-- Recent Cyberattacks Section -->
+                <div class="content mt-6">
+                    <h1 class="title">Recent cyberattacks</h1>
+
+                    <!-- Attack 1 -->
+                    <div class="box">
+                        <article class="media" style="align-items: center">
+                            <div class="media-left">
+                                <figure class="image is-128x128">
+                                    <img
+                                        src="{{attack1.image}}"
+                                        alt="Attack 1"
+                                    />
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <div class="content">
+                                    <div class="level">
+                                        <div
+                                            class="level-left"
+                                            style="align-items: start"
+                                        >
+                                            <h3 class="title is-4 mr-4">
+                                                {{attack1.title}}
+                                            </h3>
+                                            {% if attack1.mitigated %}
+                                            <span
+                                                class="tag is-primary is-light"
+                                                >Mitigated by SOC</span
+                                            >
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <p>{{attack1.description}}</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Attack 2 -->
+                    <div class="box">
+                        <article class="media" style="align-items: center">
+                            <div class="media-left">
+                                <figure class="image is-128x128">
+                                    <img
+                                        src="{{attack2.image}}"
+                                        alt="Attack 2"
+                                    />
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <div class="content">
+                                    <div class="level">
+                                        <div
+                                            class="level-left"
+                                            style="align-items: start"
+                                        >
+                                            <h3 class="title is-4 mr-4">
+                                                {{attack2.title}}
+                                            </h3>
+                                            {% if attack2.mitigated %}
+                                            <span
+                                                class="tag is-primary is-light"
+                                                >Mitigated by SOC</span
+                                            >
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <p>{{attack2.description}}</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Attack 3 -->
+                    <div class="box">
+                        <article class="media" style="align-items: center">
+                            <div class="media-left">
+                                <figure class="image is-128x128">
+                                    <img
+                                        src="{{attack3.image}}"
+                                        alt="Attack 3"
+                                    />
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <div class="content">
+                                    <div class="level">
+                                        <div
+                                            class="level-left"
+                                            style="align-items: start"
+                                        >
+                                            <h3 class="title is-4 mr-4">
+                                                {{attack3.title}}
+                                            </h3>
+                                            {% if attack3.mitigated %}
+                                            <span
+                                                class="tag is-primary is-light"
+                                                >Mitigated by SOC</span
+                                            >
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <p>{{attack3.description}}</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Takeaway Section -->
+        <footer class="footer has-background-primary">
+            <div class="container">
+                <h3 class="title is-4 has-text-white">
+                    Take away of the month
+                </h3>
+                <div class="columns is-vcentered">
+                    <div class="column is-1">
+                        <figure class="image is-96x96">
+                            <img
+                                class="is-rounded"
+                                src="{{takeaway.picture}}"
+                                alt="Takeaway"
+                            />
+                        </figure>
+                    </div>
+                    <div class="column is-offset-1">
+                        <p class="has-text-white">
+                            "<em>{{takeaway.quote}}</em>"<br />
+                            {{takeaway.author}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
