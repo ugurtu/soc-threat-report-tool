@@ -14,8 +14,16 @@ A streamlined web application built with Streamlit for Security Operations Cente
 
 You can find a sample report generated using the tool [here](samples/SOC_Report_January_2025.pdf). and a sameple json file [here](samples/SOC_Report_January_2025.json).
 
-The report template is fully customizable and can be tailored to your organization's specific requirements.
-I really suggest to change the template to fit your needs as I did not invest a lot of time in the generic one.
+## ⚠️ Important Note on Templates
+
+The HTML report template (`threat-report.html`) is designed to be fully customizable and should be tailored to your organization's specific requirements. The provided template is a basic starting point and **should be modified** to match your organization's:
+
+- Branding guidelines
+- Visual design preferences
+- Specific reporting requirements
+- Content structure needs
+
+We strongly recommend customizing the template before using it in production. The default template is intentionally minimal to serve as a foundation for your own design.
 
 ## Installation
 
