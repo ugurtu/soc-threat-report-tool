@@ -33,11 +33,14 @@ git clone https://github.com/thomasboegl1/soc-threat-report-tool.git
 cd soc-threat-report-tool
 
 # Create and activate virtual environment (optional but recommended)
+
+# Install venv on linux if you do not have it
+sudo apt-get install python3-venv
 python -m venv venv
 source venv/bin/activate  # On Windows, use: venv\Scripts\activate
 
-# Install dependencies
-pip install -r requirements.txt
+# Install dependencies for Linux do not install ssl
+pip install -r requirements.txt 
 ```
 
 ## Usage
